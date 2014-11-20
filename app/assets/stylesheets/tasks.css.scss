@@ -1,0 +1,14 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.hidden {
+	display: none;
+}
+
+.task_desc {
+	width: 290px !important;
+}
+
+.checkbox {
+	margin: 0 10px;
+}

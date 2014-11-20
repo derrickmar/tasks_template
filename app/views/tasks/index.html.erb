@@ -1,0 +1,42 @@
+<div class="container"> 
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3">
+			<h1> Add a Test </h1>
+			<div class="alert alert-danger hidden">
+			</div>
+			<%= form_for @task, html: { class: 'form-inline', id: 'task_form', role: 'form'} do |f| %>
+				<div class="form-group">
+					<%= label_tag(:description, "Description:") %>
+					<%= f.text_field :description, class: 'form-control task_desc' %>
+				</div>
+				<div class="checkbox">
+			    <label>
+			    	Important?
+			      <%= f.check_box :important, class: "task_checkbox" %>
+			    </label>
+		  	</div>
+				<%= f.submit "Create", class: "btn btn-primary" %>
+			<% end %>
+
+			<h1> Tasks </h1>
+			<table class="table table-striped" id="schools_table">
+				<thead>
+			        <tr>
+			          <th>Task ID</th>
+			          <th>Description</th>
+			          <th>Important</th>
+			        </tr>
+			  </thead>
+			  <tbody id="task_table_body">
+					<% @tasks.each do |t| %>
+							<tr class="clickableRow" %>
+								<td><%= t.id %></td>
+								<td><%= t.description %></td>
+								<td><%= t.important %></td>
+							</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
